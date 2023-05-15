@@ -1,0 +1,37 @@
+<h1>Cars</h1>
+<ul class="cars">
+    <li *ngFor="let car of cars">
+        {{car.make}} {{car.model}}
+    </li>
+</ul>
+<div class="container">
+    
+    <form [formGroup]= "carForm" (ngSubmit)="addCar()">
+        <div  class="form-group">
+            <label>Make: </label>
+            <input formControlName="make" type="text" id="make" > 
+            <span class="error-message" *ngIf="!carForm.controls['make'].valid && carForm.controls.make.dirty">Field required</span>
+        </div>
+        <div class="form-group">
+            <label>Model: </label>
+            <input formControlName="model" type="text" id="model" > 
+            <span class="error-message" *ngIf="!carForm.controls['model'].valid && carForm.controls.model.dirty">Field required</span>
+        </div>
+        <div class="form-group">
+            <label>Year: </label>
+            <input formControlName="year" id="year" type="text" > 
+            <span class="error-message" *ngIf="!carForm.controls['year'].valid && carForm.controls.year.dirty">Field required</span>
+        </div>
+        <div class="form-group">
+            <label>Image URL: </label>
+            <input formControlName="img_url" id="img_url" type="text" > 
+        </div>
+        <button class="btn-primary" type="submit">Add</button>
+    </form>
+    <div *ngIf="errorMessage!=null">
+        <span class="text-danger">{{errorMessage}}</span>
+      </div>
+      <div *ngIf="successMessage!=null">
+        <span class="text-success">{{successMessage}}</span>
+      </div>
+</div>
