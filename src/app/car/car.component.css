@@ -1,0 +1,11 @@
+.container{
+padding: 20px;
+justify-content: center;
+display: flex;
+}
+container-fluid{
+    padding-top: 100px !important
+}
+table{
+    width: 800px
+}

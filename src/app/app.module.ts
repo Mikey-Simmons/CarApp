@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarComponent } from './car/car.component';
 import { CarService } from './car/car.service';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms"
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CarDetailsComponent } from './car-details/car-details.component'
 @NgModule({
   declarations: [
     AppComponent,
-    CarComponent
+    CarComponent,
+    CarDetailsComponent
   ],
   imports: [
     BrowserModule,
